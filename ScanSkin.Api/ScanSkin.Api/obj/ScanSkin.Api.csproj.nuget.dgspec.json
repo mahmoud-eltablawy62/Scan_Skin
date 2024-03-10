@@ -1,0 +1,303 @@
+{
+  "format": 1,
+  "restore": {
+    "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Api\\ScanSkin.Api.csproj": {}
+  },
+  "projects": {
+    "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Api\\ScanSkin.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Api\\ScanSkin.Api.csproj",
+        "projectName": "ScanSkin.Api",
+        "projectPath": "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Api\\ScanSkin.Api.csproj",
+        "packagesPath": "C:\\Users\\Hello\\.nuget\\packages\\",
+        "outputPath": "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Api\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Hello\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Repo\\ScanSkin.Repo.csproj": {
+                "projectPath": "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Repo\\ScanSkin.Repo.csproj"
+              },
+              "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Services\\ScanSkin.Services.csproj": {
+                "projectPath": "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Services\\ScanSkin.Services.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.27, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Core\\ScanSkin.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Core\\ScanSkin.Core.csproj",
+        "projectName": "ScanSkin.Core",
+        "projectPath": "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Core\\ScanSkin.Core.csproj",
+        "packagesPath": "C:\\Users\\Hello\\.nuget\\packages\\",
+        "outputPath": "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Hello\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.27, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Repo\\ScanSkin.Repo.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Repo\\ScanSkin.Repo.csproj",
+        "projectName": "ScanSkin.Repo",
+        "projectPath": "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Repo\\ScanSkin.Repo.csproj",
+        "packagesPath": "C:\\Users\\Hello\\.nuget\\packages\\",
+        "outputPath": "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Repo\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Hello\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Core\\ScanSkin.Core.csproj": {
+                "projectPath": "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Core\\ScanSkin.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.27, )"
+            },
+            "Microsoft.Extensions.Identity.Core": {
+              "target": "Package",
+              "version": "[6.0.27, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Services\\ScanSkin.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Services\\ScanSkin.Services.csproj",
+        "projectName": "ScanSkin.Services",
+        "projectPath": "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Services\\ScanSkin.Services.csproj",
+        "packagesPath": "C:\\Users\\Hello\\.nuget\\packages\\",
+        "outputPath": "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Hello\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Core\\ScanSkin.Core.csproj": {
+                "projectPath": "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Core\\ScanSkin.Core.csproj"
+              },
+              "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Repo\\ScanSkin.Repo.csproj": {
+                "projectPath": "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Repo\\ScanSkin.Repo.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.25, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

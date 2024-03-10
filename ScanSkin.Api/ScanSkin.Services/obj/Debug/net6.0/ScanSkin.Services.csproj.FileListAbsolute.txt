@@ -1,0 +1,17 @@
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Services\bin\Debug\net6.0\ScanSkin.Services.deps.json
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Services\bin\Debug\net6.0\ScanSkin.Services.dll
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Services\bin\Debug\net6.0\ScanSkin.Services.pdb
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Services\bin\Debug\net6.0\ScanSkin.Core.dll
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Services\bin\Debug\net6.0\ScanSkin.Repo.dll
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Services\bin\Debug\net6.0\ScanSkin.Core.pdb
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Services\bin\Debug\net6.0\ScanSkin.Repo.pdb
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Services\obj\Debug\net6.0\ScanSkin.Services.csproj.AssemblyReference.cache
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Services\obj\Debug\net6.0\ScanSkin.Services.GeneratedMSBuildEditorConfig.editorconfig
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Services\obj\Debug\net6.0\ScanSkin.Services.AssemblyInfoInputs.cache
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Services\obj\Debug\net6.0\ScanSkin.Services.AssemblyInfo.cs
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Services\obj\Debug\net6.0\ScanSkin.Services.csproj.CoreCompileInputs.cache
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Services\obj\Debug\net6.0\ScanSkin.Services.csproj.CopyComplete
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Services\obj\Debug\net6.0\ScanSkin.Services.dll
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Services\obj\Debug\net6.0\refint\ScanSkin.Services.dll
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Services\obj\Debug\net6.0\ScanSkin.Services.pdb
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Services\obj\Debug\net6.0\ref\ScanSkin.Services.dll
