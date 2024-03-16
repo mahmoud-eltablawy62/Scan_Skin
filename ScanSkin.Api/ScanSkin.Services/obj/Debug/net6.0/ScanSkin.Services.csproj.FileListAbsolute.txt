@@ -10,6 +10,7 @@ F:\Scan_Skin\ScanSkin.Api\ScanSkin.Services\obj\Debug\net6.0\ScanSkin.Services.G
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Services\obj\Debug\net6.0\ScanSkin.Services.AssemblyInfoInputs.cache
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Services\obj\Debug\net6.0\ScanSkin.Services.AssemblyInfo.cs
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Services\obj\Debug\net6.0\ScanSkin.Services.csproj.CoreCompileInputs.cache
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Services\obj\Debug\net6.0\ScanSkin.Services.sourcelink.json
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Services\obj\Debug\net6.0\ScanSkin.Services.csproj.CopyComplete
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Services\obj\Debug\net6.0\ScanSkin.Services.dll
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Services\obj\Debug\net6.0\refint\ScanSkin.Services.dll

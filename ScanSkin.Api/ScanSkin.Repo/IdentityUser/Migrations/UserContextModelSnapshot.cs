@@ -163,6 +163,18 @@ namespace ScanSkin.Repo.IdentityUser.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
+                    b.Property<string>("AddressDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AddressLocation")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Age")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("BloodType")
+                        .HasColumnType("int");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
@@ -173,6 +185,18 @@ namespace ScanSkin.Repo.IdentityUser.Migrations
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<DateTime?>("EndDay")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("Experience")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Gender")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Height")
+                        .HasColumnType("int");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -197,8 +221,17 @@ namespace ScanSkin.Repo.IdentityUser.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<int?>("Price")
+                        .HasColumnType("int");
+
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Speciality")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("StartDay")
+                        .HasColumnType("datetime2");
 
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
@@ -208,8 +241,10 @@ namespace ScanSkin.Repo.IdentityUser.Migrations
                         .HasColumnType("nvarchar(256)");
 
                     b.Property<string>("User_Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Weight")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

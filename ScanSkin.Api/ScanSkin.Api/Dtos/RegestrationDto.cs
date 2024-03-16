@@ -5,12 +5,15 @@ namespace ScanSkin.Api.Dtos
     public class RegestrationDto
     {
         [Required]
+        [RegularExpression(@"^[a-zA-Z\s'-]+$")]
         public string DisplayName { get; set; }
 
         [Required]
+        [RegularExpression(@"^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$")]
         public string Email { get; set; }
 
         [Required]
+        [RegularExpression(@"^(?:\+20)?(?:0)?(?:1[0-2]|2[0-9]|9[0-2]|1[5-9])(?:[0-9]{8})$")]
         public string PhoneNumber { get; set; }
 
         [Required]

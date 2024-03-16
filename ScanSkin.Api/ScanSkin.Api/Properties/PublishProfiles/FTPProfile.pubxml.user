@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAx3voS/dIrUGNIWEzFNfWYAAAAAACAAAAAAAQZgAAAAEAACAAAAA4giSTnRIRGEs8UARYZjshAOA/a4Y/3sCS0zMjkXWFJAAAAAAOgAAAAAIAACAAAACg9oqq7twDWnNGWsDDZJg6Btq8SJx8rboDeGCxum83QyAAAADtCqLXHv4h3bRplf/ifzQPPd8nn4Qjro8smlCopCNKAUAAAAC8d0T5mnIf6fwaGR/gsYGr8aIO8y1O4WXSe56SNP/z14D8YgwWotzNKA9SE4jYuSif3cqEon0LaY5RYlvFWAlX</EncryptedPassword>
+    <History>False|2024-03-13T22:51:23.7464477Z;False|2024-03-14T00:47:02.7945129+02:00;</History>
+    <LastFailureDetails />
+    <_PublishTargetUrl>ftp://scanSkin.somee.com/www.scanSkin.somee.com</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="appsettings.Development.json">
+      <publishTime>03/10/2024 22:37:10</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Authentication.JwtBearer.dll">
+      <publishTime>10/24/2023 00:31:16</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Cryptography.Internal.dll">
+      <publishTime>01/21/2024 00:57:34</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Cryptography.KeyDerivation.dll">
+      <publishTime>01/21/2024 00:58:58</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll">
+      <publishTime>01/21/2024 00:59:40</publishTime>
+    </File>
+    <File Include="Microsoft.EntityFrameworkCore.Abstractions.dll">
+      <publishTime>01/16/2024 17:20:56</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

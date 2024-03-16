@@ -8,6 +8,7 @@ F:\Scan_Skin\ScanSkin.Api\ScanSkin.Repo\obj\Debug\net6.0\ScanSkin.Repo.Generated
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Repo\obj\Debug\net6.0\ScanSkin.Repo.AssemblyInfoInputs.cache
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Repo\obj\Debug\net6.0\ScanSkin.Repo.AssemblyInfo.cs
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Repo\obj\Debug\net6.0\ScanSkin.Repo.csproj.CoreCompileInputs.cache
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Repo\obj\Debug\net6.0\ScanSkin.Repo.sourcelink.json
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Repo\obj\Debug\net6.0\ScanSkin.Repo.csproj.CopyComplete
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Repo\obj\Debug\net6.0\ScanSkin.Repo.dll
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Repo\obj\Debug\net6.0\refint\ScanSkin.Repo.dll

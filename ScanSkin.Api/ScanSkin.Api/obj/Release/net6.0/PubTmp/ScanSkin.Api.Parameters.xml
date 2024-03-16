@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="mahmoudeltab-001-site1" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^F:\\Scan_Skin\\ScanSkin\.Api\\ScanSkin\.Api\\obj\\Release\\net6\.0\\PubTmp\\Out\\$" />
+  </parameter>
+  <parameter name="ScanSkin.Repo.Data.ScanSkinContext" description="" value="Data Source=SQL5110.site4now.net;Initial Catalog=db_aa6776_mahmoudeltab;User Id=db_aa6776_mahmoudeltab_admin;Password=Thoraya123456789" tags="dbfullsql">
+    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^F:\\Scan_Skin\\ScanSkin\.Api\\ScanSkin\.Api\\obj\\Release\\net6\.0\\PubTmp\\EFSQLScripts\\ScanSkin\.Repo\.Data\.ScanSkinContext\.sql$" />
+  </parameter>
+  <parameter name="ScanSkin.Repo.IdentityUser.UserContext" description="" value="Data Source=SQL5110.site4now.net;Initial Catalog=db_aa6776_mahmoudeltab;User Id=db_aa6776_mahmoudeltab_admin;Password=Thoraya123456789" tags="dbfullsql">
+    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^F:\\Scan_Skin\\ScanSkin\.Api\\ScanSkin\.Api\\obj\\Release\\net6\.0\\PubTmp\\EFSQLScripts\\ScanSkin\.Repo\.IdentityUser\.UserContext\.sql$" />
+  </parameter>
+</parameters>

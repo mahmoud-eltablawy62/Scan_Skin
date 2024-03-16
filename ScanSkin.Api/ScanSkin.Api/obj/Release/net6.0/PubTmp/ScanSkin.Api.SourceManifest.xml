@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\obj\Release\net6.0\PubTmp\Out\" />
+  <dbfullsql path="F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\obj\Release\net6.0\PubTmp\EFSQLScripts\ScanSkin.Repo.Data.ScanSkinContext.sql" />
+  <dbfullsql path="F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\obj\Release\net6.0\PubTmp\EFSQLScripts\ScanSkin.Repo.IdentityUser.UserContext.sql" />
+</sitemanifest>

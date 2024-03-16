@@ -9,6 +9,7 @@ F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\bin\Debug\net6.0\Humanizer.dll
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -18,6 +19,7 @@ F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\bin\Debug\net6.0\Microsoft.EntityFramewor
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\bin\Debug\net6.0\Microsoft.Identity.Client.dll
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
@@ -62,6 +64,7 @@ F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\obj\Debug\net6.0\ScanSkin.Api.AssemblyInf
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\obj\Debug\net6.0\ScanSkin.Api.csproj.CoreCompileInputs.cache
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\obj\Debug\net6.0\ScanSkin.Api.MvcApplicationPartsAssemblyInfo.cs
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\obj\Debug\net6.0\ScanSkin.Api.MvcApplicationPartsAssemblyInfo.cache
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\obj\Debug\net6.0\ScanSkin.Api.sourcelink.json
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\obj\Debug\net6.0\staticwebassets.build.json
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\obj\Debug\net6.0\staticwebassets.development.json
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\obj\Debug\net6.0\staticwebassets\msbuild.ScanSkin.Api.Microsoft.AspNetCore.StaticWebAssets.props
@@ -76,5 +79,3 @@ F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\obj\Debug\net6.0\refint\ScanSkin.Api.dll
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\obj\Debug\net6.0\ScanSkin.Api.pdb
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\obj\Debug\net6.0\ScanSkin.Api.genruntimeconfig.cache
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\obj\Debug\net6.0\ref\ScanSkin.Api.dll
-F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll

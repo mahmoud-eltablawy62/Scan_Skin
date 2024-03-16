@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword />
+    <History>True|2024-03-14T04:12:11.6322280Z;True|2024-03-14T05:58:12.9366303+02:00;True|2024-03-14T04:15:36.8089333+02:00;False|2024-03-14T04:13:19.0963298+02:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="Connection_Identity_User">
+      <Value>Data Source=SQL5112.site4now.net%3bInitial Catalog=db_aa670f_eltablawymahmoud0%3bUser Id=db_aa670f_eltablawymahmoud0_admin%3bPassword=Mahmoud26_</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="ScanSkin.Repo.IdentityUser.UserContext">
+      <Value>Data Source=SQL5112.site4now.net%3bInitial Catalog=db_aa670f_eltablawymahmoud0%3bUser Id=db_aa670f_eltablawymahmoud0_admin%3bPassword=Mahmoud26_</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

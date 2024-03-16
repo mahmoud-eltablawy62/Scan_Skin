@@ -13,7 +13,9 @@ namespace ScanSkin.Api.Extentions
     {
         public static IServiceCollection AddIdentityService(this IServiceCollection services, IConfiguration configuration)
         {
-
+            services.AddIdentity<Users,IdentityRole>()
+            .AddEntityFrameworkStores<UserContext>()
+             .AddDefaultTokenProviders();
             services.AddScoped(typeof(IAuthService), typeof(AurhServices));
             services.AddAuthentication(options =>
             {

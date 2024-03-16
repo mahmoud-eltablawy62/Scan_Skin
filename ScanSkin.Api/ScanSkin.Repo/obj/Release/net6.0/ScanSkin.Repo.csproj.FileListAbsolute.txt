@@ -1,0 +1,16 @@
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Repo\bin\Release\net6.0\ScanSkin.Repo.deps.json
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Repo\bin\Release\net6.0\ScanSkin.Repo.dll
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Repo\bin\Release\net6.0\ScanSkin.Repo.pdb
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Repo\bin\Release\net6.0\ScanSkin.Core.dll
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Repo\bin\Release\net6.0\ScanSkin.Core.pdb
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Repo\obj\Release\net6.0\ScanSkin.Repo.csproj.AssemblyReference.cache
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Repo\obj\Release\net6.0\ScanSkin.Repo.GeneratedMSBuildEditorConfig.editorconfig
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Repo\obj\Release\net6.0\ScanSkin.Repo.AssemblyInfoInputs.cache
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Repo\obj\Release\net6.0\ScanSkin.Repo.AssemblyInfo.cs
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Repo\obj\Release\net6.0\ScanSkin.Repo.csproj.CoreCompileInputs.cache
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Repo\obj\Release\net6.0\ScanSkin.Repo.sourcelink.json
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Repo\obj\Release\net6.0\ScanSkin.Repo.csproj.CopyComplete
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Repo\obj\Release\net6.0\ScanSkin.Repo.dll
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Repo\obj\Release\net6.0\refint\ScanSkin.Repo.dll
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Repo\obj\Release\net6.0\ScanSkin.Repo.pdb
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Repo\obj\Release\net6.0\ref\ScanSkin.Repo.dll

@@ -6,6 +6,7 @@ F:\Scan_Skin\ScanSkin.Api\ScanSkin.Core\obj\Debug\net6.0\ScanSkin.Core.Generated
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Core\obj\Debug\net6.0\ScanSkin.Core.AssemblyInfoInputs.cache
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Core\obj\Debug\net6.0\ScanSkin.Core.AssemblyInfo.cs
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Core\obj\Debug\net6.0\ScanSkin.Core.csproj.CoreCompileInputs.cache
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Core\obj\Debug\net6.0\ScanSkin.Core.sourcelink.json
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Core\obj\Debug\net6.0\ScanSkin.Core.dll
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Core\obj\Debug\net6.0\refint\ScanSkin.Core.dll
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Core\obj\Debug\net6.0\ScanSkin.Core.pdb
