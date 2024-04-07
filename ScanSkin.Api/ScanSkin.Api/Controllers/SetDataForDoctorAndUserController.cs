@@ -30,16 +30,21 @@ namespace ScanSkin.Api.Controllers
 
         [Authorize]
         [HttpPost("SetRole")]
-        public async Task<ActionResult<string>> SetRole(string Role)
+        public async Task<ActionResult<string>> SetRole([FromBody]string Role)
         {
             var user_Email = User.FindFirstValue(ClaimTypes.Email);
             var user = await _UserManager.FindByEmailAsync(user_Email);
+            if (user == null)
+            {
+                return BadRequest("not found ");
+            }
             await _UserManager.AddToRoleAsync(user, Role);
             return Ok("Okay");
+            
         }
 
         [Authorize(Roles = "Doctor")]
-        [HttpPatch("SetData/Doctor")]
+        [HttpPost("SetData/Doctor")]
         public async Task<ActionResult<DoctorDto>> SetDataForDoctor(DataDoctorDto Model)
         {
             var user_Email = User.FindFirstValue(ClaimTypes.Email);
@@ -63,8 +68,8 @@ namespace ScanSkin.Api.Controllers
         }
 
         [Authorize(Roles = "User")]
-        [HttpPatch("SetData/Patient")]
-        public async Task<ActionResult<PatientDto>> SetDataForPatient(int Age , int Height,
+        [HttpPost("SetData")]
+        public async Task<ActionResult<PatientDto>> SetDataForPatient([FromBody]int Age , int Height,
             int Weight ,Gender gen , BloodType blood)
         {
             var user_Email = User.FindFirstValue(ClaimTypes.Email);

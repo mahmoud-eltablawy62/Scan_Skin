@@ -11,6 +11,5 @@ namespace ScanSkin.Api.Dtos
         [Required]
         public string Password { get; set; }
 
-        public bool RemeberMe { get; set; } = false;
     }
 }

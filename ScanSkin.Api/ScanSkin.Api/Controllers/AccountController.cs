@@ -12,6 +12,9 @@ using ScanSkin.Repo.IdentityUser;
 using System.Data;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Cors;
+using MailKit;
+using ScanSkin.Services;
+using System.Reflection.Emit;
 
 namespace ScanSkin.Api.Controllers
 {
@@ -20,23 +23,23 @@ namespace ScanSkin.Api.Controllers
     {
         private readonly UserManager<Users> _UserManager;
         private readonly SignInManager<Users> _SignInManager;
-        private readonly RoleManager<IdentityRole> _RoleManager;
         private readonly IAuthService _AuthService;
+        private readonly IMailingService _mailingService;
 
+        /// tcld lllo blll jpee
 
 
         public AccountController(UserManager<Users> usermanager,
                                  SignInManager<Users> Sign_InManager,
-                                 IAuthService AuthService,
-                                 RoleManager<IdentityRole> roleManager
-
+                                 IAuthService AuthService,                                
+                                 IMailingService mailingService
 
             )
         {
             _UserManager = usermanager;
             _SignInManager = Sign_InManager;
             _AuthService = AuthService;
-            _RoleManager = roleManager;
+            _mailingService = mailingService;
 
         }
 
@@ -62,6 +65,15 @@ namespace ScanSkin.Api.Controllers
                 PhoneNumber = Model.PhoneNumber
             };
             var Result = await _UserManager.CreateAsync(user, Model.Password);
+
+            Random confirmationCode = new Random();
+
+            string code = confirmationCode.Next(100000, 999999).ToString();
+
+           await _mailingService.SendEmailAsync(Model.Email, code);
+
+            await _UserManager.SetAuthenticationTokenAsync(user, "Confirmation", "Code", code);
+
             if (Result.Succeeded is false) { return BadRequest(new ApiResponse(400)); }
             return Ok(new UserDto()
             {
@@ -70,6 +82,35 @@ namespace ScanSkin.Api.Controllers
                 Token = await _AuthService.CreateTokenAsync(user, _UserManager)
             }
             );
+        }
+        [Authorize]
+        [HttpPost("confirm")]
+        public async Task<IActionResult> ConfirmCode([FromBody]string code)
+        {
+            // Retrieve the user based on the provided email
+            var user_Email = User.FindFirstValue(ClaimTypes.Email);
+            var user = await _UserManager.FindByEmailAsync(user_Email);
+            if (user == null)
+            {
+                return BadRequest("User not found");
+            }
+
+            // Check if the provided confirmation code matches the one stored in the user record
+            var isCodeValid =  await _UserManager.GetAuthenticationTokenAsync(user, "Confirmation", "Code");
+
+            if (code != isCodeValid)
+            {
+                return Ok("Email confirmation failed");
+                        
+            }
+            var result = await _UserManager.ConfirmEmailAsync(user, await _UserManager.GenerateEmailConfirmationTokenAsync(user));
+
+            if (!result.Succeeded)
+            {
+                return BadRequest("Email confirmation failed");
+            }
+            return Ok("mail Confirmed");
+
         }
 
 
@@ -84,23 +125,11 @@ namespace ScanSkin.Api.Controllers
             var pass = await _SignInManager.CheckPasswordSignInAsync(user, Login.Password, false);
             if (pass.Succeeded is false) { return Unauthorized(new ApiResponse(401)); }
 
-
-            var claims = new List<Claim>
-               {
-             new Claim(ClaimTypes.Name, "username"),
-                   };
-
-            var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-
-            var authProperties = new AuthenticationProperties
+            if (!await _UserManager.IsEmailConfirmedAsync(user))
             {
-                IsPersistent = Login.RemeberMe,
-            };
+                return BadRequest("Email not confirmed");
+            }
 
-            await HttpContext.SignInAsync(
-                CookieAuthenticationDefaults.AuthenticationScheme,
-                new ClaimsPrincipal(claimsIdentity),
-                authProperties);
 
             return Ok(new UserDto()
             {
@@ -110,16 +139,7 @@ namespace ScanSkin.Api.Controllers
             });
         }
 
-
-        [Authorize]
-        [HttpGet("logout")]
-        public async Task<IActionResult> Logout()
-        {
-            await _SignInManager.SignOutAsync();
-            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return Ok("Sign-out successful");
-        }
-
+       
 
     }
 }

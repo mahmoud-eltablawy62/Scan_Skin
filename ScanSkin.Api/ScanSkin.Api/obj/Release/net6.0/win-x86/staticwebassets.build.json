@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "HdoSFBVDluRQDhlNU4Xkf00iJm9p8nl6eiyLSa/NZlM=",
+  "Source": "ScanSkin.Api",
+  "BasePath": "_content/ScanSkin.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -79,3 +79,11 @@ F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\obj\Debug\net6.0\refint\ScanSkin.Api.dll
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\obj\Debug\net6.0\ScanSkin.Api.pdb
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\obj\Debug\net6.0\ScanSkin.Api.genruntimeconfig.cache
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\obj\Debug\net6.0\ref\ScanSkin.Api.dll
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\bin\Debug\net6.0\MailKit.dll
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\bin\Debug\net6.0\MimeKit.dll
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\bin\Debug\net6.0\System.Formats.Asn1.dll
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll

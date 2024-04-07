@@ -3,6 +3,10 @@
   <PropertyGroup>
     <Controller_SelectedScaffolderID>ApiControllerEmptyScaffolder</Controller_SelectedScaffolderID>
     <Controller_SelectedScaffolderCategoryPath>root/Common/Api</Controller_SelectedScaffolderCategoryPath>
-    <NameOfLastUsedPublishProfile>F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\Properties\PublishProfiles\mahmoudeltab-001-site1 - Web Deploy9.pubxml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\Properties\PublishProfiles\site3233-WebDeploy3.pubxml</NameOfLastUsedPublishProfile>
+    <ActiveDebugProfile>ScanSkin.Api</ActiveDebugProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
 </Project>
