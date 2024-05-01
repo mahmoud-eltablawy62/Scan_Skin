@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using ScanSkin.Api.Dtos;
 using ScanSkin.Api.Errors;
 using ScanSkin.Core.Entites.Identity_User;
@@ -30,7 +31,7 @@ namespace ScanSkin.Api.Controllers
 
         [Authorize]
         [HttpPost("SetRole")]
-        public async Task<ActionResult<string>> SetRole([FromBody]string Role)
+        public async Task<ActionResult<string>> SetRole(RoleDto dto)
         {
             var user_Email = User.FindFirstValue(ClaimTypes.Email);
             var user = await _UserManager.FindByEmailAsync(user_Email);
@@ -38,15 +39,22 @@ namespace ScanSkin.Api.Controllers
             {
                 return BadRequest("not found ");
             }
-            await _UserManager.AddToRoleAsync(user, Role);
-            return Ok("Okay");
+            await _UserManager.AddToRoleAsync(user, dto.Role);
+            return Ok(new RoleReturnDto()
+            {
+                Email = user_Email, 
+                Role = dto.Role 
+            }
+            );
             
         }
 
-        [Authorize(Roles = "Doctor")]
+        [Authorize]
         [HttpPost("SetData/Doctor")]
-        public async Task<ActionResult<DoctorDto>> SetDataForDoctor(DataDoctorDto Model)
+        public async Task<ActionResult<DoctorDto>> SetDataForDoctor([FromForm] DataDoctorDto Model)
         {
+            using var dataStream = new MemoryStream();
+            await Model.Profile_Picture.CopyToAsync(dataStream);
             var user_Email = User.FindFirstValue(ClaimTypes.Email);
             var user = await _UserManager.FindByEmailAsync(user_Email);
             user.Experience = Model.Experience;
@@ -56,6 +64,7 @@ namespace ScanSkin.Api.Controllers
             user.Speciality = Model.Speciality;
             user.StartDay = Model.StartDay;
             user.EndDay = Model.EndDay;
+            user.Profile_Picture = dataStream.ToArray();
 
             _Context.SaveChanges();
 
@@ -67,30 +76,32 @@ namespace ScanSkin.Api.Controllers
             );
         }
 
-        [Authorize(Roles = "User")]
+        [Authorize]
         [HttpPost("SetData")]
-        public async Task<ActionResult<PatientDto>> SetDataForPatient([FromBody]int Age , int Height,
-            int Weight ,Gender gen , BloodType blood)
+        public async Task<ActionResult<PatientDto>> SetDataForPatient([FromForm] PatientDto dto)
         {
+            using var dataStream = new MemoryStream();
+            await dto.Profile_Pucture.CopyToAsync(dataStream);
             var user_Email = User.FindFirstValue(ClaimTypes.Email);
             var user = await _UserManager.FindByEmailAsync(user_Email);
-            user.Age = Age;
-            user.Weight =Weight;
-            user.Height = Height;
-            user.Gender = gen;
-            user.BloodType = blood;
+            user.Age = dto.Age;
+            user.Weight =dto.Weight;
+            user.Height = dto.Height;
+            user.BloodType = (BloodType?)Enum.Parse<BloodType>(dto.Blood);
+            user.Gender = (Gender?)Enum.Parse<Gender>(dto.gen);
+            user.Profile_Picture = dataStream.ToArray() ;    
            
             _Context.SaveChanges();
 
             return Ok(new PatientDto()
             {
-                user_name = user.User_Name,
                 Age = user.Age,
                 Height = user.Height,
                 Weight = user.Weight,
-
+                gen = Enum.GetName(typeof(Gender), user.Gender),
+                Blood =  Enum.GetName(typeof(BloodType), user.BloodType),
+                Profile_Pucture = dto.Profile_Pucture
             }
-
             );
         }
         

@@ -23,5 +23,8 @@ namespace ScanSkin.Api.Dtos
         [Required]
         [Compare("Password", ErrorMessage = "Password must match confirm password")]
         public string ConfirmPassword { get; set; }
+
+
+
     }
 }

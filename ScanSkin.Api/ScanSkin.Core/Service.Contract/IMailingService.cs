@@ -8,6 +8,7 @@ namespace ScanSkin.Core.Service.Contract
 {
     public interface IMailingService
     {
-        Task SendEmailAsync(string Mailto, string ConfirmationCode);    
+        Task SendEmailAsync(string Mailto, string ConfirmationCode);
+        Task SendPasswordResetEmail(string user_Email, string  passwordResetLink);
     }
 }

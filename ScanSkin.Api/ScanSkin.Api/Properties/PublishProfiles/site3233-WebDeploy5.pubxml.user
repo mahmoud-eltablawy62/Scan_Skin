@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAx3voS/dIrUGNIWEzFNfWYAAAAAACAAAAAAAQZgAAAAEAACAAAAAdFwu4BR5xXz2oQ96sNlynRAOuWaGpmxfLgn/wQXqg4QAAAAAOgAAAAAIAACAAAACikFUsYXOtCICML7ecTrA+/t5lLOD4LjsVKPpaGvrIPyAAAACMnOteFgVLpPX9Wz2/1pERHBqcW8S4+THtio99Pzyd6kAAAADi5VhSM4FBygEpcpbZx0SBLSLSKQXu1ddLUZeJ/hWD0vDH3SkOgeeB+7BpBC4N6RXrui1k6CpHKL+Yl7QfGVRn</EncryptedPassword>
+    <History>True|2024-04-24T14:55:46.4823683Z;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="Connection_Identity_User">
+      <Value>Server=db3960.public.databaseasp.net%3bDatabase=db3960%3bUser Id=db3960%3bPassword=nH=6A8f_%3fP4p%3bEncrypt=False%3bMultipleActiveResultSets=True%3b</Value>
+    </DestinationConnectionStrings>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Server=db3960.public.databaseasp.net%3bDatabase=db3960%3bUser Id=db3960%3bPassword=nH=6A8f_%3fP4p%3bEncrypt=False%3bMultipleActiveResultSets=True%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

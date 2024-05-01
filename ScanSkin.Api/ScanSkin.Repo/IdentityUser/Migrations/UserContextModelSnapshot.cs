@@ -224,6 +224,9 @@ namespace ScanSkin.Repo.IdentityUser.Migrations
                     b.Property<int?>("Price")
                         .HasColumnType("int");
 
+                    b.Property<byte[]>("Profile_Picture")
+                        .HasColumnType("varbinary(max)");
+
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 

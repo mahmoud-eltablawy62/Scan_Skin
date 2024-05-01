@@ -81,8 +81,11 @@ namespace ScanSkin.Api
                         .AllowAnyMethod();
                 });
             });
+           builder.Services.AddMemoryCache();
+
            builder.Services.AddScoped(typeof(IMailingService), typeof(MailingService));
-            builder.Services.AddDbContext<ScanSkinContext>(options =>
+
+           builder.Services.AddDbContext<ScanSkinContext>(options =>
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
@@ -98,10 +101,9 @@ namespace ScanSkin.Api
                 .AddCookie(options =>
                 {
                     options.ExpireTimeSpan = TimeSpan.FromDays(30);
+
                     options.SlidingExpiration = true;
                 });
-
-
 
 
             var app = builder.Build();
@@ -119,26 +121,28 @@ namespace ScanSkin.Api
             try
             {
                 await _dbContext.Database.MigrateAsync();
+
                 await _IdentityContext.Database.MigrateAsync();
+
                 var _user_manager = services.GetRequiredService<UserManager<Users>>();
             }
             catch (Exception ex)
             {
                 var logger = loggerFactory.CreateLogger<Program>();
+
                 logger.LogError(ex, "an error has been occured during apply the migration ");
             }
-            // Configure the HTTP request pipeline.
-            //if (app.Environment.IsDevelopment())
-            ////{
+          
             app.UseSwagger();
-            app.UseSwaggerUI();
-            //}
 
+            app.UseSwaggerUI();
+            
             app.UseHttpsRedirection();
 
             app.UseCors();
 
             app.UseAuthentication();
+
             app.UseAuthorization();
 
             app.MapControllers();

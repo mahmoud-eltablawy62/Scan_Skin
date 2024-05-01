@@ -15,6 +15,10 @@ using Microsoft.AspNetCore.Cors;
 using MailKit;
 using ScanSkin.Services;
 using System.Reflection.Emit;
+using System.Collections.Concurrent;
+using Microsoft.Extensions.Caching.Memory;
+using static Org.BouncyCastle.Crypto.Engines.SM2Engine;
+using System.Web;
 
 namespace ScanSkin.Api.Controllers
 {
@@ -25,24 +29,22 @@ namespace ScanSkin.Api.Controllers
         private readonly SignInManager<Users> _SignInManager;
         private readonly IAuthService _AuthService;
         private readonly IMailingService _mailingService;
-
-        /// tcld lllo blll jpee
-
+        private readonly IMemoryCache _memoryCache;
 
         public AccountController(UserManager<Users> usermanager,
                                  SignInManager<Users> Sign_InManager,
                                  IAuthService AuthService,                                
-                                 IMailingService mailingService
-
+                                 IMailingService mailingService,
+                                 IMemoryCache memoryCache
             )
         {
             _UserManager = usermanager;
             _SignInManager = Sign_InManager;
             _AuthService = AuthService;
             _mailingService = mailingService;
-
+            _memoryCache = memoryCache;
         }
-
+        
         [HttpGet("CkeckEmail")]
         public async Task<ActionResult<bool>> CheckedEmail(string Email)
         {
@@ -57,6 +59,7 @@ namespace ScanSkin.Api.Controllers
                 return BadRequest(new ApiValidation()
                 { Errors = new string[] { "this email is exist" } });
             }
+            
             var user = new Users()
             {
                 User_Name = Model.DisplayName,
@@ -69,11 +72,12 @@ namespace ScanSkin.Api.Controllers
             Random confirmationCode = new Random();
 
             string code = confirmationCode.Next(100000, 999999).ToString();
-
-           await _mailingService.SendEmailAsync(Model.Email, code);
+             
+            await _mailingService.SendEmailAsync(Model.Email, code);
 
             await _UserManager.SetAuthenticationTokenAsync(user, "Confirmation", "Code", code);
 
+          
             if (Result.Succeeded is false) { return BadRequest(new ApiResponse(400)); }
             return Ok(new UserDto()
             {
@@ -85,32 +89,111 @@ namespace ScanSkin.Api.Controllers
         }
         [Authorize]
         [HttpPost("confirm")]
-        public async Task<IActionResult> ConfirmCode([FromBody]string code)
+        public async Task<IActionResult> ConfirmCode(ConfirmDto Dto)
         {
-            // Retrieve the user based on the provided email
+
+            if (_memoryCache.TryGetValue("VerificationCode", out string storedCode))
+            {
+                
+                if (Dto.ConfirmationCode == storedCode)
+                {
+                    var user_Email = User.FindFirstValue(ClaimTypes.Email);
+                    var user = await _UserManager.FindByEmailAsync(user_Email);
+                    var isCodeValid = await _UserManager.GetAuthenticationTokenAsync(user, "Confirmation", "Code");
+
+                    if (Dto.ConfirmationCode != isCodeValid)
+                    {
+                        return Ok("Email confirmation failed");
+                    }
+                    var result = await _UserManager.ConfirmEmailAsync(user, await _UserManager.GenerateEmailConfirmationTokenAsync(user));
+
+                    if (result.Succeeded)
+                    {          
+                        _memoryCache.Remove("VerificationCode");
+
+                        return Ok("Verification code confirmed successfully.");
+                    }
+                    else
+                    {                  
+                        return BadRequest("Email confirmation failed.");
+                    }
+                }
+            }
+            return BadRequest("Click On ResendCode");
+        }
+
+        [Authorize]
+        [HttpPost("ResendCode")]
+        public async Task<IActionResult> ResendCode()
+        {
             var user_Email = User.FindFirstValue(ClaimTypes.Email);
             var user = await _UserManager.FindByEmailAsync(user_Email);
+            Random confirmationCode = new Random();
+
+            string code = confirmationCode.Next(100000, 999999).ToString();
+
+            await _mailingService.SendEmailAsync(user_Email, code);
+
+            await _UserManager.SetAuthenticationTokenAsync(user, "Confirmation", "Code", code);
+
+            return Ok($" Anthor Code ==> {code}");
+
+        }
+
+        [Authorize]
+        [HttpPost("forgotPassword")]
+        public async Task<IActionResult> ForgotPassword()
+        {
+            var user_Email = User.FindFirstValue(ClaimTypes.Email);
+            var user = await _UserManager.FindByEmailAsync(user_Email);
+
+            
+
+            if (user == null || !(await _UserManager.IsEmailConfirmedAsync(user)))
+            {
+                
+                return Ok("Password reset email sent successfully.");
+            }
+
+            
+            var resetToken = await _UserManager.GeneratePasswordResetTokenAsync(user);
+
+
+            var passwordResetLink = Url.Action(nameof(ResetPassword), "Account", new { resetToken, email = user_Email }, Request.Scheme);
+                 
+
+
+            await _mailingService.SendPasswordResetEmail(user_Email, passwordResetLink!);
+
+            return Ok("Password reset email sent successfully.");
+        }
+
+        [Authorize]
+        [HttpPost("resetPassword")]
+        public async Task<IActionResult> ResetPassword(ResetPassword Dto )
+        {
+            var user_Email = User.FindFirstValue(ClaimTypes.Email);
+            var user = await _UserManager.FindByEmailAsync(user_Email);
+           
+
+
+
             if (user == null)
             {
-                return BadRequest("User not found");
+                return BadRequest("User not found.");
             }
 
-            // Check if the provided confirmation code matches the one stored in the user record
-            var isCodeValid =  await _UserManager.GetAuthenticationTokenAsync(user, "Confirmation", "Code");
+            var token = await _UserManager.GeneratePasswordResetTokenAsync(user);
 
-            if (code != isCodeValid)
+            // Reset the user's password
+            var result = await _UserManager.ResetPasswordAsync(user,token,Dto.NewPassword);
+
+            if (result.Succeeded)
             {
-                return Ok("Email confirmation failed");
-                        
+                return Ok("Password reset successfully.");
             }
-            var result = await _UserManager.ConfirmEmailAsync(user, await _UserManager.GenerateEmailConfirmationTokenAsync(user));
 
-            if (!result.Succeeded)
-            {
-                return BadRequest("Email confirmation failed");
-            }
-            return Ok("mail Confirmed");
-
+            return BadRequest("Password reset failed.");
         }
 
 
@@ -129,8 +212,6 @@ namespace ScanSkin.Api.Controllers
             {
                 return BadRequest("Email not confirmed");
             }
-
-
             return Ok(new UserDto()
             {
                 Name = user.User_Name,
@@ -138,8 +219,5 @@ namespace ScanSkin.Api.Controllers
                 Token = await _AuthService.CreateTokenAsync(user, _UserManager)
             });
         }
-
-       
-
     }
 }

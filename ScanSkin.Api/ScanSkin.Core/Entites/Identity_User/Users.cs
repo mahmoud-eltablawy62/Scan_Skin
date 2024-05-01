@@ -10,6 +10,7 @@ namespace ScanSkin.Core.Entites.Identity_User
 {
     public class Users : IdentityUser
     {
+
         public string ? User_Name { get; set; }
 
         //<<<<<<<<<<<<< Doctor >>>>>>>>>>>>>>>> //
@@ -32,6 +33,7 @@ namespace ScanSkin.Core.Entites.Identity_User
         public Gender? Gender { get; set; }
         public BloodType ? BloodType { get; set; }
 
-
+        ///////////////////// Both picture to doctor and paitent //////////////// 
+        public byte[] ? Profile_Picture { get; set; } = null;
     }
 }
