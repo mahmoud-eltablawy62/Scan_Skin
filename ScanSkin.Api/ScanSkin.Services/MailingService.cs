@@ -15,8 +15,8 @@ namespace ScanSkin.Services
     
     public class MailingService : IMailingService
     {
-        private readonly MailSetting _mailingSetting;   
-        private readonly IMemoryCache _MemoryCache;
+        private readonly MailSetting _mailingSetting;  
+        private readonly IMemoryCache _MemoryCache; 
         public MailingService(IOptions<MailSetting> mailSetting , IMemoryCache MemoryCache)
         {
             _mailingSetting = mailSetting.Value;
@@ -33,7 +33,7 @@ namespace ScanSkin.Services
 
             email.To.Add(MailboxAddress.Parse(Mailto));
             var builder = new BodyBuilder();
-            builder.HtmlBody = ConfirmationCode;    
+            builder.HtmlBody =  ConfirmationCode;    
             email.Body = builder.ToMessageBody();
             email.From.Add(new MailboxAddress(_mailingSetting.DisplayName , _mailingSetting.Email));
             using var smtp = new SmtpClient();

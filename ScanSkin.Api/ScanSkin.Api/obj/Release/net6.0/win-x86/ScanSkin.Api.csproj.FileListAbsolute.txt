@@ -74,3 +74,6 @@ F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\bin\Release\net6.0\win-x86\MimeKit.dll
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\bin\Release\net6.0\win-x86\System.Formats.Asn1.dll
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\bin\Release\net6.0\win-x86\System.Security.Cryptography.Pkcs.dll
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\bin\Release\net6.0\win-x86\System.Text.Encoding.CodePages.dll
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\bin\Release\net6.0\win-x86\ScanSkin.Api.staticwebassets.runtime.json
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\bin\Release\net6.0\win-x86\AutoMapper.dll
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\bin\Release\net6.0\win-x86\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

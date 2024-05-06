@@ -70,7 +70,7 @@ namespace ScanSkin.Api.Controllers
 
             return Ok(new DoctorDto()
             {
-                Doctor_Name = user.User_Name,
+                Doctor_Name = user.UserName,
                 Location_Description = user.AddressDescription,
             }
             );

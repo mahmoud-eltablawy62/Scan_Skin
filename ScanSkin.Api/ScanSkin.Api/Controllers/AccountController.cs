@@ -62,7 +62,7 @@ namespace ScanSkin.Api.Controllers
             
             var user = new Users()
             {
-                User_Name = Model.DisplayName,
+                
                 Email = Model.Email,
                 UserName = Model.Email.Split('@')[0],
                 PhoneNumber = Model.PhoneNumber
@@ -81,7 +81,7 @@ namespace ScanSkin.Api.Controllers
             if (Result.Succeeded is false) { return BadRequest(new ApiResponse(400)); }
             return Ok(new UserDto()
             {
-                Name = user.User_Name,
+                Name = user.UserName,
                 Email = user.Email,
                 Token = await _AuthService.CreateTokenAsync(user, _UserManager)
             }
@@ -128,45 +128,50 @@ namespace ScanSkin.Api.Controllers
         {
             var user_Email = User.FindFirstValue(ClaimTypes.Email);
             var user = await _UserManager.FindByEmailAsync(user_Email);
-            Random confirmationCode = new Random();
-
-            string code = confirmationCode.Next(100000, 999999).ToString();
-
-            await _mailingService.SendEmailAsync(user_Email, code);
-
-            await _UserManager.SetAuthenticationTokenAsync(user, "Confirmation", "Code", code);
-
-            return Ok($" Anthor Code ==> {code}");
-
-        }
-
-        [Authorize]
-        [HttpPost("forgotPassword")]
-        public async Task<IActionResult> ForgotPassword()
-        {
-            var user_Email = User.FindFirstValue(ClaimTypes.Email);
-            var user = await _UserManager.FindByEmailAsync(user_Email);
-
-            
-
-            if (user == null || !(await _UserManager.IsEmailConfirmedAsync(user)))
+            if (user != null)
             {
-                
-                return Ok("Password reset email sent successfully.");
+                await _UserManager.RemoveAuthenticationTokenAsync(user, "Confirmation", "Code");
+                Random confirmationCode = new Random();
+
+                string code = confirmationCode.Next(100000, 999999).ToString();
+
+                await _mailingService.SendEmailAsync(user_Email, code);
+
+                await _UserManager.SetAuthenticationTokenAsync(user, "Confirmation", "Code", code);
+
+                return Ok($" Anthor Code ==> {code}");
+            }
+            else
+            {
+                return BadRequest($"User ====> {user_Email} not found in database");    
             }
 
-            
-            var resetToken = await _UserManager.GeneratePasswordResetTokenAsync(user);
-
-
-            var passwordResetLink = Url.Action(nameof(ResetPassword), "Account", new { resetToken, email = user_Email }, Request.Scheme);
-                 
-
-
-            await _mailingService.SendPasswordResetEmail(user_Email, passwordResetLink!);
-
-            return Ok("Password reset email sent successfully.");
         }
+
+        
+        [HttpPost("forgotPassword")]
+        public async Task<IActionResult> ForgotPassword(ForgetPasswordDto Dto)
+        {
+            var user = await _UserManager.FindByEmailAsync(Dto.Email);
+            if (user != null)
+            {
+                Random confirmationCode = new Random();
+
+                string code = confirmationCode.Next(100000, 999999).ToString();
+
+                await _mailingService.SendEmailAsync(Dto.Email, code);
+
+                await _UserManager.SetAuthenticationTokenAsync(user, "Confirmation", "Code", code);
+
+                return Ok($" Code ==> {code}");
+            }
+            else
+            {
+                return BadRequest($"{Dto.Email} not found in database ");
+            }
+        }
+
+
 
         [Authorize]
         [HttpPost("resetPassword")]
@@ -174,9 +179,6 @@ namespace ScanSkin.Api.Controllers
         {
             var user_Email = User.FindFirstValue(ClaimTypes.Email);
             var user = await _UserManager.FindByEmailAsync(user_Email);
-           
-
-
 
             if (user == null)
             {
@@ -196,7 +198,6 @@ namespace ScanSkin.Api.Controllers
             return BadRequest("Password reset failed.");
         }
 
-
         [HttpPost("Login")]
         public async Task<ActionResult<UserDto>> Login(LoginDto Login)
         {
@@ -214,7 +215,7 @@ namespace ScanSkin.Api.Controllers
             }
             return Ok(new UserDto()
             {
-                Name = user.User_Name,
+                Name = user.UserName,
                 Email = user.Email,
                 Token = await _AuthService.CreateTokenAsync(user, _UserManager)
             });

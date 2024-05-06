@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "rnNUaSwL93HO2d8aPw3CF5SdWo94o5mCTfjMcq9Y+HA+OVHmADt2LLSW6O5kMEFfxzkp5M5a8rHnKqvbzOMEsg==",
+  "dgSpecHash": "4BiFWCHJZMNKyB5uSXCyx1mfzPt9bfsz0jS4Es+Seq+PuWXxd6PJqtprlqzvHeptKj6vaPW/29axsflX/dKImw==",
   "success": true,
   "projectFilePath": "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Api\\ScanSkin.Api.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Hello\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Hello\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\Hello\\.nuget\\packages\\bouncycastle.cryptography\\2.3.0\\bouncycastle.cryptography.2.3.0.nupkg.sha512",
     "C:\\Users\\Hello\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Hello\\.nuget\\packages\\mailkit\\4.4.0\\mailkit.4.4.0.nupkg.sha512",
@@ -15,7 +17,7 @@
     "C:\\Users\\Hello\\.nuget\\packages\\microsoft.aspnetcore.http.extensions\\2.2.0\\microsoft.aspnetcore.http.extensions.2.2.0.nupkg.sha512",
     "C:\\Users\\Hello\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\Hello\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\6.0.27\\microsoft.aspnetcore.identity.entityframeworkcore.6.0.27.nupkg.sha512",
-    "C:\\Users\\Hello\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\Hello\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Hello\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.7\\microsoft.data.sqlclient.2.1.7.nupkg.sha512",
     "C:\\Users\\Hello\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\Hello\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.27\\microsoft.entityframeworkcore.6.0.27.nupkg.sha512",

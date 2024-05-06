@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ScanSkin.Core.Entites.Identity_User
+namespace ScanSkin.Services
 {
-    public class BassClass
+    internal class DoctorService
     {
-
     }
 }

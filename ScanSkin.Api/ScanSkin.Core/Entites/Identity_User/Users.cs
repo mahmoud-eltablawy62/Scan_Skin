@@ -11,7 +11,7 @@ namespace ScanSkin.Core.Entites.Identity_User
     public class Users : IdentityUser
     {
 
-        public string ? User_Name { get; set; }
+        
 
         //<<<<<<<<<<<<< Doctor >>>>>>>>>>>>>>>> //
 

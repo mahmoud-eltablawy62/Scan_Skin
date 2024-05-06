@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Api\\wwwroot\\Doctors\\dow.jpg",
+      "PackagePath": "staticwebassets\\Doctors\\dow.jpg"
+    },
+    {
+      "Id": "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Api\\wwwroot\\Doctors\\down.jpg",
+      "PackagePath": "staticwebassets\\Doctors\\down.jpg"
+    },
+    {
+      "Id": "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Api\\wwwroot\\Doctors\\downl.jpg",
+      "PackagePath": "staticwebassets\\Doctors\\downl.jpg"
+    },
+    {
+      "Id": "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Api\\wwwroot\\Doctors\\downlo.jpg",
+      "PackagePath": "staticwebassets\\Doctors\\downlo.jpg"
+    },
+    {
+      "Id": "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Api\\wwwroot\\Doctors\\downloa.jpg",
+      "PackagePath": "staticwebassets\\Doctors\\downloa.jpg"
+    },
+    {
+      "Id": "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Api\\wwwroot\\Doctors\\download.jpg",
+      "PackagePath": "staticwebassets\\Doctors\\download.jpg"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.ScanSkin.Api.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.build.ScanSkin.Api.props",
+      "PackagePath": "build\\ScanSkin.Api.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.ScanSkin.Api.props",
+      "PackagePath": "buildMultiTargeting\\ScanSkin.Api.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.buildTransitive.ScanSkin.Api.props",
+      "PackagePath": "buildTransitive\\ScanSkin.Api.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

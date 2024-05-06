@@ -18,6 +18,7 @@ namespace ScanSkin.Repo.IdentityUser
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+
             base.OnModelCreating(builder);
 
         }

@@ -243,9 +243,6 @@ namespace ScanSkin.Repo.IdentityUser.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
-                    b.Property<string>("User_Name")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int?>("Weight")
                         .HasColumnType("int");
 

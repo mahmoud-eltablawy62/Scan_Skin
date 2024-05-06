@@ -4,6 +4,8 @@ F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\obj\Release\net6.0\win-x86\PubTmp\Out\app
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\obj\Release\net6.0\win-x86\PubTmp\Out\ScanSkin.Api.dll
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\obj\Release\net6.0\win-x86\PubTmp\Out\ScanSkin.Api.runtimeconfig.json
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\obj\Release\net6.0\win-x86\PubTmp\Out\ScanSkin.Api.pdb
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\obj\Release\net6.0\win-x86\PubTmp\Out\AutoMapper.dll
+F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\obj\Release\net6.0\win-x86\PubTmp\Out\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\obj\Release\net6.0\win-x86\PubTmp\Out\BouncyCastle.Cryptography.dll
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\obj\Release\net6.0\win-x86\PubTmp\Out\MailKit.dll
 F:\Scan_Skin\ScanSkin.Api\ScanSkin.Api\obj\Release\net6.0\win-x86\PubTmp\Out\Microsoft.AspNetCore.Authentication.JwtBearer.dll

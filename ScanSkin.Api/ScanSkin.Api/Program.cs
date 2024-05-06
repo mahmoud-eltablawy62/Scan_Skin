@@ -3,12 +3,14 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using ScanSkin.Api.Extentions;
+using ScanSkin.Api.Helpers;
 using ScanSkin.Api.Setting;
 using ScanSkin.Core.Entites.Identity_User;
 using ScanSkin.Core.Service.Contract;
 using ScanSkin.Repo.Data;
 using ScanSkin.Repo.IdentityUser;
 using ScanSkin.Services;
+
 
 
 namespace ScanSkin.Api
@@ -83,7 +85,9 @@ namespace ScanSkin.Api
             });
            builder.Services.AddMemoryCache();
 
-           builder.Services.AddScoped(typeof(IMailingService), typeof(MailingService));
+          builder.Services.AddAutoMapper(typeof(MappingProfile));
+
+            builder.Services.AddScoped(typeof(IMailingService), typeof(MailingService));
 
            builder.Services.AddDbContext<ScanSkinContext>(options =>
             {
@@ -123,8 +127,8 @@ namespace ScanSkin.Api
                 await _dbContext.Database.MigrateAsync();
 
                 await _IdentityContext.Database.MigrateAsync();
-
                 var _user_manager = services.GetRequiredService<UserManager<Users>>();
+                await UserContextSeed.UserSeedAsync(_user_manager);
             }
             catch (Exception ex)
             {
@@ -139,11 +143,15 @@ namespace ScanSkin.Api
             
             app.UseHttpsRedirection();
 
+            app.UseStaticFiles();
+
             app.UseCors();
 
             app.UseAuthentication();
 
             app.UseAuthorization();
+
+            
 
             app.MapControllers();
 
