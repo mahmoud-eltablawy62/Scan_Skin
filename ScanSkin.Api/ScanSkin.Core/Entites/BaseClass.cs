@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ScanSkin.Services
+namespace ScanSkin.Core.Entites
 {
-    internal class DoctorService
+    public class BaseClass
     {
+        public int Id { get; set; }
     }
 }

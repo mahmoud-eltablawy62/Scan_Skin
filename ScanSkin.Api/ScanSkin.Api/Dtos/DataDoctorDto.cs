@@ -11,11 +11,13 @@
 
         public string Speciality { get; set; }
 
-        public DateTime StartDay { get; set; }
-
-        public DateTime EndDay { get; set; }
+    
 
         public IFormFile? Profile_Picture { get; set; }
+
+        public TimeSpan StartHour { get; set; }
+
+        public TimeSpan EndHour { get; set; }
       
     }
 }

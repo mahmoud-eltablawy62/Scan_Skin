@@ -62,9 +62,10 @@ namespace ScanSkin.Api.Controllers
             user.AddressDescription = Model.AddressDescription;
             user.AddressLocation = Model.AddressLocation;
             user.Speciality = Model.Speciality;
-            user.StartDay = Model.StartDay;
-            user.EndDay = Model.EndDay;
             user.Profile_Picture = dataStream.ToArray();
+            user.StartWork = Model.StartHour; 
+            user.EndWork = Model.EndHour;
+            user.DurationTime = user.EndWork - user.StartWork;
 
             _Context.SaveChanges();
 

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ScanSkin.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f0ead2b625877f9218ea545dd0ba63c291660048")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+341341bbc2356ddab54dfcf9a24ceda7a4c8acaa")]
 [assembly: System.Reflection.AssemblyProductAttribute("ScanSkin.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ScanSkin.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

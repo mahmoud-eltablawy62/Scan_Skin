@@ -3,12 +3,15 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualBasic;
 using MimeKit.Text;
 using ScanSkin.Api.Dtos;
 using ScanSkin.Api.Errors;
 using ScanSkin.Api.Helpers;
 using ScanSkin.Core.Entites.Identity_User;
+using ScanSkin.Core.Service.Contract;
 using ScanSkin.Core.Spacifications;
+using ScanSkin.Services;
 using System.Net.Http;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -19,13 +22,15 @@ namespace ScanSkin.Api.Controllers
     {
         private readonly HttpClient _httpClient;
         private readonly UserManager<Users> _UserManager;
-        private readonly IMapper _mapper; 
-        public PatientController(UserManager<Users> UserManager , IMapper mapper)
+        private readonly IMapper _mapper;
+        private readonly IAppointementService _appointementService;
+        public PatientController(UserManager<Users> UserManager, IMapper mapper , IAppointementService appointementService)
         {
             _httpClient = new HttpClient();
             _httpClient.BaseAddress = new Uri("https://api-4-89sc.onrender.com/");
             _UserManager = UserManager;
-            _mapper = mapper;   
+            _mapper = mapper;
+            _appointementService = appointementService;
 
         }
         [HttpPost("RespondingToillness")]
@@ -33,13 +38,13 @@ namespace ScanSkin.Api.Controllers
         {
 
             var image = Dto.Illness_Pucture;
-      
+
             var content = new MultipartFormDataContent();
 
             var photoContent = new StreamContent(image.OpenReadStream());
             content.Add(photoContent, "image", image.FileName);
 
-            HttpResponseMessage response = await _httpClient.PostAsync("predict",content);
+            HttpResponseMessage response = await _httpClient.PostAsync("predict", content);
 
             if (response.IsSuccessStatusCode)
             {
@@ -70,17 +75,17 @@ namespace ScanSkin.Api.Controllers
 
         [Authorize]
         [HttpPut("UpdateDataForPatient")]
-        public async Task<ActionResult<PatientUpdateData>> UpdateDataForPatient([FromForm] PatientDto Dto )
+        public async Task<ActionResult<PatientUpdateData>> UpdateDataForPatient([FromForm] PatientDto Dto)
         {
-            
+
 
             var user_email = User.FindFirstValue(ClaimTypes.Email);
             var user = await _UserManager.FindByEmailAsync(user_email);
 
-            if(user == null)
+            if (user == null)
             {
                 return BadRequest(new ApiValidation()
-                { Errors = new string[] { "This User Is  Exist" } });
+                { Errors = new string[] { "This User Is not Exist" } });
             }
 
             using var dataStream = new MemoryStream();
@@ -102,8 +107,67 @@ namespace ScanSkin.Api.Controllers
                 gen = Dto.gen,
                 Blood = Dto.Blood,
                 Profile_Pucture = Dto.Profile_Pucture
-            }) ;
+            });
+        }
 
+        [HttpGet("{Id}")]
+        public async Task <ActionResult<PhoneforDoctorDto>> GetPhoneforDoctors(string Id)
+        { 
+            var doctor = await _UserManager.FindByIdAsync(Id);
+            var role =  _UserManager.GetRolesAsync(doctor).ToString();
+            if (doctor != null && role == "Doctor")
+            {
+                return Ok(new PhoneforDoctorDto
+                {
+                    PhoneNumber = doctor.PhoneNumber,
+                });
+
+            }
+            return BadRequest(new ApiValidation()
+            { Errors = new string[] { "This Doctor Is not Exist" } });    
+        }
+
+        [Authorize]
+        [HttpPost("BookAppointment")]
+        public async Task<ActionResult<AppointmentReturnDtoForDoctor>> BookAppointment(AppointmentDto dto)
+        {
+
+            DateTime datetimetoday = DateTime.Today;
+
+            if(dto.Date < datetimetoday) { 
+            return BadRequest("Day And Time Not Valid");
+            }
+
+            var DaysIsValid = await _appointementService.GetAppointmentsByData(dto.Date);
+
+            int Appoints = DaysIsValid.Count();
+
+            if(Appoints == 16)
+            {
+                return BadRequest("Full Day");
+            }
+
+            var user_email = User.FindFirstValue(ClaimTypes.Email);
+
+            var user = await _UserManager.FindByEmailAsync(user_email);
+
+            var Doctor = await _UserManager.FindByIdAsync(dto.Doctor_ID);
+
+            var AppiontmentsWithSameDoctor = await _appointementService.GetAppoiontments(dto.Doctor_ID);
+
+            foreach(var appoint in AppiontmentsWithSameDoctor)
+            {
+                if(appoint.StartTime == dto.StartTime && appoint.Date == dto.Date)
+                {
+                    return BadRequest("Appointment not valid");
+                }
+            }
+
+            TimeSpan endtime = dto.StartTime.Add(TimeSpan.FromMinutes(30));
+
+            var appointment = await _appointementService.Appointment( Doctor.Email , user.UserName , Doctor.PhoneNumber , dto.Date , dto.StartTime , endtime, Doctor.Id );
+
+            return Ok(appointment);
         }
     }
 }

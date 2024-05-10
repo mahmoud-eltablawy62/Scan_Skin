@@ -9,11 +9,11 @@ using ScanSkin.Repo.IdentityUser;
 
 #nullable disable
 
-namespace ScanSkin.Repo.Data.Migrations
+namespace ScanSkin.Repo.IdentityUser.Migrations
 {
     [DbContext(typeof(UserContext))]
-    [Migration("20240312130156_FourthMigrations")]
-    partial class FourthMigrations
+    [Migration("20240507152249_time")]
+    partial class time
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -181,6 +181,9 @@ namespace ScanSkin.Repo.Data.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<TimeSpan?>("DurationTime")
+                        .HasColumnType("time");
+
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
@@ -188,8 +191,8 @@ namespace ScanSkin.Repo.Data.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime?>("EndDay")
-                        .HasColumnType("datetime2");
+                    b.Property<TimeSpan?>("EndWork")
+                        .HasColumnType("time");
 
                     b.Property<int?>("Experience")
                         .HasColumnType("int");
@@ -226,14 +229,17 @@ namespace ScanSkin.Repo.Data.Migrations
                     b.Property<int?>("Price")
                         .HasColumnType("int");
 
+                    b.Property<byte[]>("Profile_Picture")
+                        .HasColumnType("varbinary(max)");
+
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Speciality")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("StartDay")
-                        .HasColumnType("datetime2");
+                    b.Property<TimeSpan?>("StartWork")
+                        .HasColumnType("time");
 
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
@@ -241,9 +247,6 @@ namespace ScanSkin.Repo.Data.Migrations
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("User_Name")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("Weight")
                         .HasColumnType("int");

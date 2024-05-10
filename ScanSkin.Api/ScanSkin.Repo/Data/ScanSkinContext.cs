@@ -22,7 +22,7 @@ namespace ScanSkin.Repo.Data
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
 
-       
+       public DbSet<Appointment> Appointments { get; set; }  
 
     }
 }

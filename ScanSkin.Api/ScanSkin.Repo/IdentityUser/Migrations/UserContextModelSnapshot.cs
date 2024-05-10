@@ -179,6 +179,9 @@ namespace ScanSkin.Repo.IdentityUser.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<TimeSpan?>("DurationTime")
+                        .HasColumnType("time");
+
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
@@ -186,8 +189,11 @@ namespace ScanSkin.Repo.IdentityUser.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime?>("EndDay")
+                    b.Property<DateTime?>("EndDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<TimeSpan?>("EndWork")
+                        .HasColumnType("time");
 
                     b.Property<int?>("Experience")
                         .HasColumnType("int");
@@ -233,8 +239,11 @@ namespace ScanSkin.Repo.IdentityUser.Migrations
                     b.Property<string>("Speciality")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("StartDay")
+                    b.Property<DateTime?>("StartDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<TimeSpan?>("StartWork")
+                        .HasColumnType("time");
 
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");

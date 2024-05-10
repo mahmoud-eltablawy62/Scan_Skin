@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using ScanSkin.Core.Entites.Identity_User;
+using System.Globalization;
 using System.Text;
 namespace ScanSkin.Repo.IdentityUser
 {
@@ -7,10 +8,16 @@ namespace ScanSkin.Repo.IdentityUser
     {
         public static async Task UserSeedAsync(UserManager<Users> _user)
         {
+
+            DateTime currentDate = DateTime.Now.Date;
+            DayOfWeek currentDayOfWeek = currentDate.DayOfWeek;
+            int daysToAdd = ((int)DayOfWeek.Sunday - (int)currentDayOfWeek + 7) % 7;
+            DateTime startOfWeek = currentDate.AddDays(daysToAdd);
+            DateTime endOfWeek = startOfWeek.AddDays(4);
             if (_user.Users.Count() == 0)
             {
                 var user = new Users()
-                {     
+                {
                     Email = "Dr.QamriyaAl-Banna702@gmail.com",
                     UserName = "Dr.QamriyaAl-Banna",
                     PhoneNumber = "01554847412",
@@ -19,8 +26,11 @@ namespace ScanSkin.Repo.IdentityUser
                     AddressLocation = "Tanta/ElheloStreet",
                     AddressDescription = "Tanta/elheloStreet/84",
                     Speciality = "specialistindermatology,cosmeticsandlaser",
-                    StartDay = new DateTime(2024, 12, 4),
-                    EndDay = new DateTime(2025, 12, 4),
+                    StartWork = new TimeSpan(9, 0, 0),
+                    EndWork = new TimeSpan(17, 0,0),
+                    DurationTime = new TimeSpan(8, 0,0),
+                    StartDate = startOfWeek,
+                    EndDate = endOfWeek,
                     Profile_Picture = Encoding.UTF8.GetBytes("Doctors/download.jpg"),
                     EmailConfirmed = true
                 };
@@ -37,8 +47,11 @@ namespace ScanSkin.Repo.IdentityUser
                     AddressLocation = "Tanta/ElheloStreet",
                     AddressDescription = "Tanta/elheloStreet/84",
                     Speciality = "specialistindermatology,cosmeticsandlaser",
-                    StartDay = new DateTime(2024, 12, 4),
-                    EndDay = new DateTime(2025, 12, 4),
+                    StartWork = new TimeSpan(9, 0, 0),
+                    EndWork = new TimeSpan(17, 0, 0),
+                    DurationTime = new TimeSpan(8, 0, 0),
+                    StartDate = startOfWeek,
+                    EndDate = endOfWeek,
                     Profile_Picture = Encoding.UTF8.GetBytes("Doctors/downloa.jpg"),
                     EmailConfirmed = true
                 };
@@ -56,8 +69,11 @@ namespace ScanSkin.Repo.IdentityUser
                     AddressDescription = "Tanta/elheloStreet/84",
                     Speciality = "specialistindermatology,cosmeticsandlaser",
                     Profile_Picture = Encoding.UTF8.GetBytes("Doctors/down.jpg"),
-                    StartDay = new DateTime(2024, 12, 4),
-                    EndDay = new DateTime(2025, 12, 4),
+                    StartWork = new TimeSpan(9, 0, 0),
+                    EndWork = new TimeSpan(17, 0, 0),
+                    DurationTime = new TimeSpan(8, 0, 0),
+                    StartDate = startOfWeek,
+                    EndDate = endOfWeek,
                     EmailConfirmed = true
                 };
                 await _user.CreateAsync(user2, "mahM2#");
@@ -73,8 +89,11 @@ namespace ScanSkin.Repo.IdentityUser
                     AddressLocation = "Tanta/ElheloStreet",
                     AddressDescription = "Tanta/elheloStreet/84",
                     Speciality = "specialistindermatology,cosmeticsandlaser",
-                    StartDay = new DateTime(2024, 12, 4),
-                    EndDay = new DateTime(2025, 12, 4),
+                    StartWork = new TimeSpan(9, 0, 0),
+                    EndWork = new TimeSpan(17, 0, 0),
+                    DurationTime = new TimeSpan(8, 0, 0),
+                    StartDate = startOfWeek,
+                    EndDate = endOfWeek,
                     Profile_Picture = Encoding.UTF8.GetBytes("Doctors/downl.jpg"),
                     EmailConfirmed = true
                 };
@@ -91,8 +110,11 @@ namespace ScanSkin.Repo.IdentityUser
                     AddressLocation = "Tanta/ElheloStreet",
                     AddressDescription = "Tanta/elheloStreet/84",
                     Speciality = "specialistindermatology,cosmeticsandlaser",
-                    StartDay = new DateTime(2024, 12, 4),
-                    EndDay = new DateTime(2025, 12, 4),
+                    StartWork = new TimeSpan(9, 0, 0),
+                    EndWork = new TimeSpan(17, 0, 0),
+                    DurationTime = new TimeSpan(8, 0, 0),
+                    StartDate = startOfWeek,
+                    EndDate = endOfWeek,
                     Profile_Picture = Encoding.UTF8.GetBytes("Doctors/downlo.jpg"),
                     EmailConfirmed = true
                 };
@@ -109,8 +131,11 @@ namespace ScanSkin.Repo.IdentityUser
                     AddressLocation = "Tanta/ElheloStreet",
                     AddressDescription = "Tanta/elheloStreet/84",
                     Speciality = "specialistindermatology,cosmeticsandlaser",
-                    StartDay = new DateTime(2024, 12, 4),
-                    EndDay = new DateTime(2025, 12, 4),
+                    StartWork = new TimeSpan(9, 0, 0),
+                    EndWork = new TimeSpan(17, 0, 0),
+                    DurationTime = new TimeSpan(8, 0, 0),
+                    StartDate = startOfWeek,
+                    EndDate = endOfWeek,
                     Profile_Picture = Encoding.UTF8.GetBytes("Doctors/dow.jpg"),
                     EmailConfirmed = true
                 };

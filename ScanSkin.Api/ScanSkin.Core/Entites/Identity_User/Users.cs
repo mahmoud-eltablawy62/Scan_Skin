@@ -20,9 +20,11 @@ namespace ScanSkin.Core.Entites.Identity_User
         public string? AddressLocation { get; set; }
         public string? AddressDescription { get; set; }
         public string? Speciality { get; set;}
-        public DateTime? StartDay { get; set; }
-        public DateTime? EndDay { get; set;}
-
+        public TimeSpan ? StartWork { get; set; }
+        public TimeSpan? EndWork { get; set; }
+        public TimeSpan ? DurationTime { get; set; }    
+        public DateTime? StartDate { get; set; }  
+        public DateTime? EndDate { get; set; }  
 
         //<<<<<<<<<<<<<<<<< Patient >>>>>>>>>>>>> 
 
@@ -35,5 +37,7 @@ namespace ScanSkin.Core.Entites.Identity_User
 
         ///////////////////// Both picture to doctor and paitent //////////////// 
         public byte[] ? Profile_Picture { get; set; } = null;
+
+       
     }
 }

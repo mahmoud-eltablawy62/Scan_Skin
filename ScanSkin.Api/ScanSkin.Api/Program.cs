@@ -1,12 +1,14 @@
-﻿using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using ScanSkin.Api.Extentions;
 using ScanSkin.Api.Helpers;
 using ScanSkin.Api.Setting;
+using ScanSkin.Core;
 using ScanSkin.Core.Entites.Identity_User;
+using ScanSkin.Core.Repo.Contract;
 using ScanSkin.Core.Service.Contract;
+using ScanSkin.Repo;
 using ScanSkin.Repo.Data;
 using ScanSkin.Repo.IdentityUser;
 using ScanSkin.Services;
@@ -86,9 +88,10 @@ namespace ScanSkin.Api
            builder.Services.AddMemoryCache();
 
           builder.Services.AddAutoMapper(typeof(MappingProfile));
-
+            builder.Services.AddScoped(typeof(IGenaric<>) , typeof(GenaricRepo<>) );
+            builder.Services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
             builder.Services.AddScoped(typeof(IMailingService), typeof(MailingService));
-
+            builder.Services.AddScoped(typeof(IAppointementService), typeof(AppointmentService));
            builder.Services.AddDbContext<ScanSkinContext>(options =>
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
@@ -101,13 +104,7 @@ namespace ScanSkin.Api
 
             builder.Services.AddIdentityService(builder.Configuration);
 
-            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-                .AddCookie(options =>
-                {
-                    options.ExpireTimeSpan = TimeSpan.FromDays(30);
-
-                    options.SlidingExpiration = true;
-                });
+            
 
 
             var app = builder.Build();
@@ -125,7 +122,6 @@ namespace ScanSkin.Api
             try
             {
                 await _dbContext.Database.MigrateAsync();
-
                 await _IdentityContext.Database.MigrateAsync();
                 var _user_manager = services.GetRequiredService<UserManager<Users>>();
                 await UserContextSeed.UserSeedAsync(_user_manager);
