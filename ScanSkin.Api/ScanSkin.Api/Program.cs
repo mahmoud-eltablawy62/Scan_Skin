@@ -9,7 +9,6 @@ using ScanSkin.Core.Entites.Identity_User;
 using ScanSkin.Core.Repo.Contract;
 using ScanSkin.Core.Service.Contract;
 using ScanSkin.Repo;
-using ScanSkin.Repo.Data;
 using ScanSkin.Repo.IdentityUser;
 using ScanSkin.Services;
 

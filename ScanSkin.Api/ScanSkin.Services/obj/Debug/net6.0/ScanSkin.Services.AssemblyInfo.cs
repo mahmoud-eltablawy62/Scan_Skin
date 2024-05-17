@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ScanSkin.Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+341341bbc2356ddab54dfcf9a24ceda7a4c8acaa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d24f1c4a0a4859465be23020327da7216e08eb46")]
 [assembly: System.Reflection.AssemblyProductAttribute("ScanSkin.Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ScanSkin.Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

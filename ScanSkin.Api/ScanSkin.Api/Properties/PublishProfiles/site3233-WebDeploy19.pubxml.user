@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAx3voS/dIrUGNIWEzFNfWYAAAAAACAAAAAAAQZgAAAAEAACAAAABSRS+LhZM2XUQTPxcdT25g2G9YrXJrRCwFbxna+A262wAAAAAOgAAAAAIAACAAAAAliZkgNtLAPTNhvpq9OmLti1UlxNXVRsLQMdHGn0PKOCAAAACdkiBwGgZGerybWTFq9qrL0ZvFUpUbeBwLuwuEz7GtpUAAAACidQHD2t7Oaqv3GDHVeuu9PaiSTZnNDnIpmJ6SZm00h4tvtQXs8lVAMtnOYRp9e+rBDJxmPOXpsgQ6McMomRD6</EncryptedPassword>
+    <History>True|2024-05-10T16:47:47.2064343Z;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="Connection_Identity_User">
+      <Value>Server = .%3bDatabase = ScanSkinDataBase_User%3bTrusted_Connection=True</Value>
+    </DestinationConnectionStrings>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Server=db4880.public.databaseasp.net%3b Database=db4880%3b User Id=db4880%3b Password=T!q4x8#X-pB5%3b Encrypt=False%3b MultipleActiveResultSets=True%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

@@ -2,7 +2,7 @@
 using ScanSkin.Core;
 using ScanSkin.Core.Entites;
 using ScanSkin.Core.Service.Contract;
-using ScanSkin.Repo.Data;
+using ScanSkin.Repo.IdentityUser;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +34,7 @@ namespace ScanSkin.Services
          
 
         public async Task<List<Appointment>> GetAppoiontments(string Doctor_Id) =>
-          await scanSkinContext.Appointments.Where(a => a.Doctor_Id == Doctor_Id).ToListAsync();
+          await scanSkinContext.Appointments.Where(a => a.D_Id == Doctor_Id).ToListAsync();
 
        
 

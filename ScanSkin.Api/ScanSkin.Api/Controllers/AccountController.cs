@@ -155,6 +155,8 @@ namespace ScanSkin.Api.Controllers
             var user = await _UserManager.FindByEmailAsync(Dto.Email);
             if (user != null)
             {
+                await _UserManager.RemoveAuthenticationTokenAsync(user, "Confirmation", "Code");
+
                 Random confirmationCode = new Random();
 
                 string code = confirmationCode.Next(100000, 999999).ToString();

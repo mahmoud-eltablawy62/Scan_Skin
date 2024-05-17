@@ -24,7 +24,7 @@ namespace ScanSkin.Api.Controllers
         private readonly UserManager<Users> _UserManager;
         private readonly IMapper _mapper;
         private readonly IAppointementService _appointementService;
-        public PatientController(UserManager<Users> UserManager, IMapper mapper , IAppointementService appointementService)
+        public PatientController(UserManager<Users> UserManager, IMapper mapper, IAppointementService appointementService)
         {
             _httpClient = new HttpClient();
             _httpClient.BaseAddress = new Uri("https://api-4-89sc.onrender.com/");
@@ -114,8 +114,8 @@ namespace ScanSkin.Api.Controllers
         public async Task <ActionResult<PhoneforDoctorDto>> GetPhoneforDoctors(string Id)
         { 
             var doctor = await _UserManager.FindByIdAsync(Id);
-            var role =  _UserManager.GetRolesAsync(doctor).ToString();
-            if (doctor != null && role == "Doctor")
+
+            if (doctor != null)
             {
                 return Ok(new PhoneforDoctorDto
                 {

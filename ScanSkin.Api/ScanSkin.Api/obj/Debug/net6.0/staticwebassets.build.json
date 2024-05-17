@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Gr9rTh88iiUNHdXVi24fwtJ7ybB+cKUvg6ia6NcPFHQ=",
+  "Hash": "Sy7rF2V0nqPVK/8gvp3/PfJ61kTkojTVeTL+LnP37sE=",
   "Source": "ScanSkin.Api",
   "BasePath": "_content/ScanSkin.Api",
   "Mode": "Default",
@@ -129,6 +129,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Doctors\\download.jpg"
+    },
+    {
+      "Identity": "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Api\\wwwroot\\Doctors\\eaffed.jpg",
+      "SourceId": "ScanSkin.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\Scan_Skin\\ScanSkin.Api\\ScanSkin.Api\\wwwroot\\",
+      "BasePath": "_content/ScanSkin.Api",
+      "RelativePath": "Doctors/eaffed.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Doctors\\eaffed.jpg"
     }
   ]
 }

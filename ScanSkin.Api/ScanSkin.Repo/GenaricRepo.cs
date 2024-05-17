@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ScanSkin.Core.Entites;
 using ScanSkin.Core.Repo.Contract;
-using ScanSkin.Repo.Data;
+using ScanSkin.Repo.IdentityUser;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -23,7 +23,7 @@ namespace ScanSkin.Core.Entites
             Date = date;
             StartTime = startTime;
             EndTime = endTime;
-            Doctor_Id = doctor_Id;
+            D_Id = doctor_Id;
         }
 
         public string ? DoctorName  { get; set; }
@@ -36,7 +36,9 @@ namespace ScanSkin.Core.Entites
         [Required]
         public TimeSpan EndTime { get; set; }
 
-        public string ? Doctor_Id { get; set; }
+        public string  D_Id { get; set; }
 
+       public bool IsValed { get; set; } =true;
+         
     }
 }

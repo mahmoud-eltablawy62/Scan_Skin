@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ScanSkin.Api.Helpers
 {
-    public class ItemResolver : IValueResolver<Users, DoctorToReturnDto, string?>
+    public class ItemResolver : IValueResolver<Users, DoctorToReturnDto, string>
     {
 
         private readonly IConfiguration _Configuration;
@@ -18,10 +18,13 @@ namespace ScanSkin.Api.Helpers
         }
         public string Resolve(Users source, DoctorToReturnDto destination, string destMember, ResolutionContext context)
         {
-            string result = Encoding.UTF8.GetString(source.Profile_Picture);
-            if (!string.IsNullOrEmpty(result))
+            if (source.Profile_Picture != null)
             {
-                return $"{_Configuration["ApiBaseUrl"]}/{result}";
+                string result = Encoding.UTF8.GetString(source.Profile_Picture);
+                if (!string.IsNullOrEmpty(result))
+                {
+                    return $"{_Configuration["ApiBaseUrl"]}/{result}";
+                }
             }
             return string.Empty;
 

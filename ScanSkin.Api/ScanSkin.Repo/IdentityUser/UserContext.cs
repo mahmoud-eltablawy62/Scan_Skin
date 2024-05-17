@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using ScanSkin.Core.Entites;
 using ScanSkin.Core.Entites.Identity_User;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,7 @@ namespace ScanSkin.Repo.IdentityUser
             base.OnModelCreating(builder);
 
         }
+        
     }
 
 }

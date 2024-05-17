@@ -8,5 +8,6 @@
         public string? AddressDescription { get; set; }
         public int? Price { get; set; }
 
+
     }
 }
